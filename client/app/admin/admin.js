@@ -3,9 +3,14 @@
 angular.module('minhatriboApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('admin', {
-        url: '/admin',
-        templateUrl: 'app/admin/admin.html',
-        controller: 'AdminCtrl'
+      .state('admin/user', {
+        url: '/admin/user',
+        templateUrl: 'app/admin/user/user.html',
+        controller: 'UserCtrl'
+      })
+      .state('admin/category', {
+        url: '/admin/category',
+        templateUrl: 'app/admin/category/category.html',
+        controller: 'CategoryCtrl'
       });
   });

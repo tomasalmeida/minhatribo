@@ -8,12 +8,12 @@ angular.module('minhatriboApp')
         return;
       }
       $http.post('/api/articles', { url: $scope.articleURL })
-        .success(function (data, status) {
-          alert('TODO: ok');
-        })
-        .error(function (data, status) {
-          alert('TODO: ko');
-        });
+      .success(function (data, status) {
+        alert('TODO: ok');
+      })
+      .error(function (data, status) {
+        alert('TODO: ko');
+      });
     };
   
   });
