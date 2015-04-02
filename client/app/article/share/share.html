@@ -1,0 +1,13 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <form ng->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Enter the article link to share</label>
+      <input type="url" class="form-control" ng-model="articleURL" required placeholder="http://">
+    </div>
+    <button type="button" ng-click="shareArticle()" class="btn btn-default">Share it!</button>
+  </form>
+</div>
+
+<div ng-include="'components/footer/footer.html'"></div>
