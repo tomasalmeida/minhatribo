@@ -1,15 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <p>The delete category and category index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="category in categories">
-        <strong>{{category.name}}</strong><br>
-        <span class="text-muted">{{category.description}}</span>
-        <a ng-click="deleteCategory(category._id)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
-    </li>
-  </ul>
-  
   <form class="form-inline">
     <div class="form-group">
       <input type="text" class="form-control" ng-model="newCategory" placeholder="Category name">
@@ -19,6 +10,15 @@
     </div>
     <button type="button" ng-click="addCategory()" class="btn btn-default">Add Category!</button>
   </form>
+  <p></p>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="category in categories | orderBy:'name'">
+        <strong>{{category.name}}</strong><br>
+        <span class="text-muted">{{category.description}}</span>
+        <a ng-click="deleteCategory(category._id)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+    </li>
+  </ul>
+  
   
 </div>
 

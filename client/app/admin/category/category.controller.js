@@ -1,33 +1,21 @@
 'use strict';
 
 angular.module('minhatriboApp')
-  .controller('CategoryCtrl', function ($scope, $http) {
+  .controller('CategoryCtrl', function ($scope, Category) {
 
-    $http.get('/api/categories')
-    .success(function (data, status) {
-      console.log(data);
-      $scope.categories = data;
-      
-    })
-    .error(function (data, status) {
-      alert('TODO: ko');
-    });    
-
+    $scope.categories = Category.query();
+    
     $scope.addCategory = function() {
       if ($scope.newCategory === '') {
         return;
       }
-      $http.post('/api/categories', { 
+      var cat = Category.save({ 
         name: $scope.newCategory,
         description: $scope.newDescription
-      })
-      .success(function (data, status) {
-        console.log(data);
-        $scope.categories.push(data);
-      })
-      .error(function (data, status) {
-        alert('TODO: ko');
       });
+      $scope.categories.push(cat);
+      $scope.newCategory = '';
+      $scope.newDescription = '';
     };
   
     $scope.deleteCategory = function (id) {
