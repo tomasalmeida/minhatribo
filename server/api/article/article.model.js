@@ -9,10 +9,14 @@ var ArticleSchema = new Schema({
     id: { type: Schema.Types.ObjectId, required: true},
     name: { type: String, required: true},
   },
+  category: { 
+    id: { type: Schema.Types.ObjectId, required: true},
+    name: { type: String, required: true}
+  },
   title: { type: String, required: true},
   url: { type: String, required: true},
   content: { type: String, required: true},
-  category: { type: String, required: true}
+  description: { type: String, required: true}
 });
 
 module.exports = mongoose.model('Article', ArticleSchema);

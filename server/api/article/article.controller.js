@@ -23,6 +23,7 @@ exports.show = function(req, res) {
 
 // Creates a new article in the DB.
 exports.create = function(req, res) {
+  
   //TODO: verify if the article already exists on DB
   reader(req.body.url, function(parseError, parsedArticle, meta) {
      if(parseError) { 
@@ -36,7 +37,8 @@ exports.create = function(req, res) {
          title:    parsedArticle.title,
          url:      req.body.url,
          content:  parsedArticle.content,
-         category: "fixMe"
+         category: req.body.category,
+         description:  req.body.description
        };
        parsedArticle.close();
        Article.create(article, function(err, storedArticle) {

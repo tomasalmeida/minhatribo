@@ -1,19 +1,22 @@
 'use strict';
 
 angular.module('minhatriboApp')
-  .controller('ArticleShareCtrl', function ($scope, $http) {
+  .controller('ArticleShareCtrl', function ($scope, $http, Category, Article) {
   
+    $scope.categories = Category.query();
+    
     $scope.shareArticle = function () {
-      if ($scope.articleURL === '') {
+      if ($scope.url === '') {
         return;
       }
-      $http.post('/api/articles', { url: $scope.articleURL })
-      .success(function (data, status) {
-        alert('TODO: ok');
-      })
-      .error(function (data, status) {
-        alert('TODO: ko');
-      });
+      $scope.article = Article.save({
+        url: $scope.url,
+        category: { 
+          id: $scope.selectedCategory._id,
+          name: $scope.selectedCategory.name
+        },
+        description: $scope.description
+      });      
     };
   
   });
