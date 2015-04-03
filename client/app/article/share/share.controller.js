@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('minhatriboApp')
-  .controller('ArticleShareCtrl', function ($scope, $http, Category, Article) {
+  .controller('ArticleShareCtrl', function ($scope, Category, Article) {
   
     $scope.categories = Category.query();
     

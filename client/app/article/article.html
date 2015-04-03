@@ -1,3 +1,17 @@
-<div class="col-md-12">
-This is the article view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row" ng-repeat="articlesLine in articlesTable">
+    <div class=" col-sm-12 col-md-4" ng-repeat="article in articlesLine">
+      <a href="article/{{article._id}}">
+        <div class="panel panel-info">
+          <div class="panel-heading">{{article.title}}</div>
+          <div class="panel-body">{{article.description}}</div>
+           <div class="panel-footer">{{article.category.name}}</div>
+        </div>
+      </a>
+    </div>
+  </div>  
 </div>
+
+<div ng-include="'components/footer/footer.html'"></div>
