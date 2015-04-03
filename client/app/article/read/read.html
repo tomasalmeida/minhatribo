@@ -1,0 +1,14 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <h3>{{article.creator.name}} - {{article.category.name}} - {{article.creation}}</h3>
+  <h1>
+    <a ng-href="{{article.url}}" target="_blank">
+      {{article.title}}
+    </a>
+  </h1>
+  
+  <div ng-bind-html="article.content"></div>    
+</div>
+
+<div ng-include="'components/footer/footer.html'"></div>

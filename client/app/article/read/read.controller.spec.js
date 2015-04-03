@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: ArticleCtrl', function () {
+describe('Controller: ArticleReadCtrl', function () {
 
   // load the controller's module
   beforeEach(module('minhatriboApp'));
 
-  var ArticleCtrl, scope;
+  var ArticleReadCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ArticleCtrl = $controller('ArticleCtrl', {
+    ArticleReadCtrl = $controller('ArticleReadCtrl', {
       $scope: scope
     });
   }));

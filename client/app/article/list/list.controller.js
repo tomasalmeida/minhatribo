@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('minhatriboApp')
-  .controller('ArticleCtrl', function ($scope,Article) {
+  .controller('ArticleListCtrl', function ($scope,Article) {
     
     var articles = Article.query(function() {
       $scope.articlesTable = [];
