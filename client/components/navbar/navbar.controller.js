@@ -16,4 +16,8 @@ angular.module('minhatriboApp')
     $scope.isActive = function(route) {
       return $location.path().substr(0,route.length) === route;
     };
+  
+    $scope.isActiveFullPath = function(route) {
+      return $location.path() === route;
+    };
   });
