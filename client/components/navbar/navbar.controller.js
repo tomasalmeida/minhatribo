@@ -2,11 +2,7 @@
 
 angular.module('minhatriboApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
-
+    
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
@@ -18,6 +14,6 @@ angular.module('minhatriboApp')
     };
 
     $scope.isActive = function(route) {
-      return route === $location.path();
+      return $location.path().substr(0,route.length) === route;
     };
   });
