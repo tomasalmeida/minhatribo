@@ -14,4 +14,9 @@ angular.module('minhatriboApp')
         }
       });
     };
+  
+    $scope.setUserAs = function(role, updatedUser) {
+      updatedUser.role = role;
+      User.update(updatedUser);
+    };
   });
