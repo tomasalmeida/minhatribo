@@ -7,18 +7,18 @@ angular.module('minhatriboApp')
         url: '/article',
         templateUrl: 'app/article/list/list.html',
         controller: 'ArticleListCtrl',
-        authenticate: true
+        verifyPrivileges: true
       })
       .state('article/share', {
         url: '/article/share',
         templateUrl: 'app/article/share/share.html',
         controller: 'ArticleShareCtrl',
-        authenticate: true
+        verifyPrivileges: true
       })
       .state('article/id', {
         url: '/article/:id',
         templateUrl: 'app/article/read/read.html',
         controller: 'ArticleReadCtrl',
-        authenticate: true
+        verifyPrivileges: true
       })
   });

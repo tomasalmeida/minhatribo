@@ -47,7 +47,12 @@ angular.module('minhatriboApp', [
       Auth.isLoggedInAsync(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
           $location.path('/login');
+        } else if (next.verifyPrivileges && !Auth.canAccess()){
+          $location.path('/login');
+        } else if (next.verifyAdmin && !Auth.isAdmin()){
+          $location.path('/login');
         }
+        
       });
     });
   });

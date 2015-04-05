@@ -102,12 +102,22 @@ angular.module('minhatriboApp')
       },
 
       /**
-       * Check if a user is logged in
+       * Check if an user is logged in
        *
        * @return {Boolean}
        */
       isLoggedIn: function() {
         return currentUser.hasOwnProperty('role');
+      },
+      
+      /**
+       * Check if an user has sufficient privileges 
+       *
+       * @return {Boolean}
+       */
+      canAccess: function() {
+        return (currentUser.role === 'admin' ||
+                currentUser.role === 'user');
       },
 
       /**

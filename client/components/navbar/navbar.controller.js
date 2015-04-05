@@ -7,6 +7,7 @@ angular.module('minhatriboApp')
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
+    $scope.canAccess = Auth.canAccess;
 
     $scope.logout = function() {
       Auth.logout();

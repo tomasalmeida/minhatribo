@@ -6,11 +6,13 @@ angular.module('minhatriboApp')
       .state('admin/user', {
         url: '/admin/user',
         templateUrl: 'app/admin/user/user.html',
-        controller: 'UserCtrl'
+        controller: 'UserCtrl',
+        verifyAdmin: true
       })
       .state('admin/category', {
         url: '/admin/category',
         templateUrl: 'app/admin/category/category.html',
-        controller: 'CategoryCtrl'
+        controller: 'CategoryCtrl',
+        verifyAdmin: true
       });
   });
