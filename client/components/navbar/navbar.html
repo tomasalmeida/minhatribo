@@ -14,21 +14,32 @@
         <li ng-show="canAccess()" ng-class="{active: isActiveFullPath('/article')}"><a href="/article">Knowledge</a></li>
         <li ng-show="canAccess()" ng-class="{active: isActiveFullPath('/article/share')}"><a href="/article/share">Share an article!</a></li>
         <li class="dropdown" ng-show="isAdmin()" ng-class="{active: isActive('/admin/')}">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administration<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            Administration
+            <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/admin/user">Users</a></li>
             <li class="divider"></li>
-            <li><a href="/admin/category">Categories</a></li>            
+            <li><a href="/admin/category">Categories</a></li>
           </ul>
         </li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">        
+      <ul class="nav navbar-nav navbar-right"> 
         <li ng-hide="isLoggedIn()" ng-class="{active: isActiveFullPath('/signup')}"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActiveFullPath('/login')}"><a href="/login">Login</a></li>
         <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActiveFullPath('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActiveFullPath('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+        <li class="dropdown" ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <span class="glyphicon glyphicon-cog"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="" ng-click="logout()">Logout</a></li>
+          </ul>
+        </li>
+        <li ng-class="{active: isActiveFullPath('/about')}"><a href="/about">About</a></li>
       </ul>
     </div>
   </div>
