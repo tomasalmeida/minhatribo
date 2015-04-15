@@ -1,14 +1,26 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-  <h3>{{article.creator.name}} - {{article.category.name}} - {{article.creation}}</h3>
-  <h1>
-    <a ng-href="{{article.url}}" target="_blank">
-      {{article.title}}
-    </a>
-  </h1>
-  
-  <div ng-bind-html="article.content"></div>    
+<div class="container article">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <h4>
+       <span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;{{article.category.name}}
+      </h4>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h4>
+        <p class="pull-right">shared by {{article.creator.name}}, <span am-time-ago="article.creation"></span></p>
+      </h4>
+    </div>
+  </div>
+  <div class="row">  
+    <h1 class="title">
+      <a ng-href="{{article.url}}" target="_blank">
+        {{article.title}}
+      </a>
+    </h1>
+  </div>
+  <div class="body" ng-bind-html="article.content"></div>
 </div>
 
 <div ng-include="'components/footer/footer.html'"></div>

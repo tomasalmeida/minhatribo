@@ -1,0 +1,17 @@
+.article .title{
+  text-align: center;
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
+  padding: 22px 0px;
+}
+
+.article .title a {
+  text-decoration: none;  
+}
+
+.article .body {
+  text-align: justify;
+  line-height: 1.8;
+  letter-spacing: normal;
+  font-weight: 200;
+}

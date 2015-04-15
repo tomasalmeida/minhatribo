@@ -1,6 +1,7 @@
 .list a {
   text-decoration: none;
 }
+
 .list .title {
   text-overflow: ellipsis;
   white-space: nowrap;
