@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('minhatriboApp')
-  .controller('ArticleShareCtrl', function ($scope, Category, Article) {
+  .controller('ArticleShareCtrl', function ($scope,$window, Category, Article) {
   
     $scope.categories = Category.query();
     
@@ -16,7 +16,9 @@ angular.module('minhatriboApp')
           name: $scope.selectedCategory.name
         },
         description: $scope.description
-      });      
+      }, function(article){
+        $window.location.href = "/article/" + article._id;
+      });
     };
   
   });
