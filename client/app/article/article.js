@@ -20,5 +20,5 @@ angular.module('minhatriboApp')
         templateUrl: 'app/article/read/read.html',
         controller: 'ArticleReadCtrl',
         verifyPrivileges: true
-      })
+      });
   });

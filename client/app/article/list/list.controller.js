@@ -7,7 +7,7 @@ angular.module('minhatriboApp')
       $scope.articlesTable = [];
       var articlesLine = [];
       for (var index = 0; index < articles.length; index++) {
-        if (index % 3 == 0 && index > 0) {
+        if (index % 3 === 0 && index > 0) {
           $scope.articlesTable.push(articlesLine);
           articlesLine = [];
         }

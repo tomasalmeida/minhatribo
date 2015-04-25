@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Article = require('./article.model');
+var Category = require('../category/category.model');
 var reader = require('node-readability');
 
 // Get list of articles
@@ -23,29 +24,39 @@ exports.show = function(req, res) {
 
 // Creates a new article in the DB.
 exports.create = function(req, res) {
-  
   //TODO: verify if the article already exists on DB
   reader(req.body.url, function(parseError, parsedArticle, meta) {
-     if(parseError) { 
-       return handleError(res, err); 
-     } else {
-       var article = {
-         creator:  {
-           id: req.user._id,
-           name: req.user.name
-         },
-         title:    parsedArticle.title,
-         url:      req.body.url,
-         content:  parsedArticle.content,
-         category: req.body.category,
-         description:  req.body.description
-       };
-       parsedArticle.close();
-       Article.create(article, function(err, storedArticle) {
-         if(err) { return handleError(res, err); }
-         return res.json(201, storedArticle);
-       });
-     }
+    if(parseError) { 
+      return handleError(res, parseError); 
+    } else {
+      Category.findById(req.body.category._id, function (err, category) {
+        if (err) { 
+          return handleError(res, err); 
+        }
+        if(!category) { 
+          return res.send(404); 
+        }
+        var article = {
+          creator:  {
+            id: req.user._id,
+            name: req.user.name
+          },
+          category: {
+            id: category.id,
+            name: category.name
+          },
+          title:    parsedArticle.title,
+          url:      req.body.url,
+          content:  parsedArticle.content,         
+          description:  req.body.description
+        };
+        parsedArticle.close();
+        Article.create(article, function(err, storedArticle) {
+          if(err) { return handleError(res, err); }
+          return res.json(201, storedArticle);
+        });
+      });
+    }
   });
 };
 

@@ -2,6 +2,7 @@
 
 describe('Service: article', function () {
 
+  
   // load the service's module
   beforeEach(module('minhatriboApp'));
 
@@ -11,8 +12,8 @@ describe('Service: article', function () {
     article = _article_;
   }));
 
-  it('should do something', function () {
+/*  it('should do something', function () {
     expect(!!article).toBe(true);
   });
-
+*/
 });

@@ -1,3 +1,4 @@
+'use strict';
 
 describe('Service: category', function () {
 
@@ -10,8 +11,9 @@ describe('Service: category', function () {
     category = _category_;
   }));
 
+/*
   it('should do something', function () {
     expect(!!category).toBe(true);
   });
-
+*/
 });

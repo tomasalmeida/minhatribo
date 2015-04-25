@@ -19,6 +19,7 @@ angular.module('minhatriboApp')
     };
   
     $scope.deleteCategory = function (id) {
-      alert("TODO");
+      //TODO
+      console.log('TODO: '+ id);
     };
   });

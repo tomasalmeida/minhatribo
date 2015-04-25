@@ -11,13 +11,10 @@ angular.module('minhatriboApp')
       }
       $scope.article = Article.save({
         url: $scope.url,
-        category: { 
-          id: $scope.selectedCategory._id,
-          name: $scope.selectedCategory.name
-        },
+        category: $scope.selectedCategory,
         description: $scope.description
       }, function(article){
-        $window.location.href = "/article/" + article._id;
+        $window.location.href = '/article/' + article._id;
       });
     };
   
