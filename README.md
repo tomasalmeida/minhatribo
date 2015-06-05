@@ -31,8 +31,3 @@ RELEASE DATE: undefined
 ## License
 
 Apache v2 License
-
-
- 
- 
- ### Another deeper heading
